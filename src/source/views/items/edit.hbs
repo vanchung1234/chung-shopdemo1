@@ -1,0 +1,33 @@
+<div class="mt-4">
+    <h3>Update</h3>
+
+    <form class="mt-4" method="POST" action="/items/{{datas._id}}?_method=PUT">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" value="{{datas.name}}" id="name" name="name">
+        </div>
+        
+        <div class="form-group">
+            <label for="img">img</label>
+            <input type="text" class="form-control" value="{{datas.img}}" id="img" name="img">
+        </div>
+        <div class="form-group">
+            <label for="cost">cost</label>
+            <input type="text" class="form-control" value="{{datas.cost}}" id="cost" name="cost">
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" class="form-control" value="{{datas.type}}" id="type" name="type">
+        </div>
+         <div class="form-group">
+            <label for="desc">desc</label>
+            <input type="text" class="form-control" value="{{datas.desc}}" id="desc" name="desc">
+        </div>
+          <div class="form-group">
+            <label for="desc">use</label>
+            <input type="text" class="form-control" value="{{datas.use}}" id="use" name="use">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

@@ -1,0 +1,419 @@
+<link rel="stylesheet" href="/css/mdb-pro.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/mdb.ecommerce.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/detail.css">
+<style>
+	#btn-back-to-top {
+		position: fixed !important;
+		bottom: 20px !important;
+		right: 20px !important;
+		display: none;
+
+	}
+
+	.button {
+		background-color: Transparent !important;
+		box-shadow: none !important;
+
+	}
+
+
+	.top {
+		color: black !important;
+	}
+</style>
+<main>
+	<div class="container">
+
+		<div class="card " style="background-color: white;">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+
+						<div class="preview-pic tab-content">
+							<div class="tab-pane active" id="pic-1"><img src="{{datas.img}}" /></div>
+							<div class="tab-pane" id="pic-2"><img src="{{datas.img}}" /></div>
+							<div class="tab-pane" id="pic-3"><img src="{{datas.img}}" /></div>
+							<div class="tab-pane" id="pic-4"><img src="{{datas.img}}" /></div>
+							<div class="tab-pane" id="pic-5"><img src="{{datas.img}}" /></div>
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+							<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{datas.img}}" /></a>
+							</li>
+							<li><a data-target="#pic-2" data-toggle="tab"><img src="{{datas.img}}" /></a></li>
+							<li><a data-target="#pic-3" data-toggle="tab"><img src="{{datas.img}}" /></a></li>
+							<li><a data-target="#pic-4" data-toggle="tab"><img src="{{datas.img}}" /></a></li>
+							<li><a data-target="#pic-5" data-toggle="tab"><img src="{{datas.img}}" /></a></li>
+						</ul>
+
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">{{datas.name}}</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star "></span>
+							</div>
+							<span class="review-no">41 reviews</span>
+						</div>
+						<p class="product-description">{{datas.desc}}</p>
+						<h4 class="price">Giá : <span>{{datas.cost}}M</span></h4>
+						<p class="vote"><strong>91%</strong> người dùng hài lòng ! <strong>(87 votes)</strong></p>
+
+
+						<div class="section" style="padding-bottom:20px;">
+							<h6 class="title-attr">Số lượng</h6>
+							<div>
+								<div class="btn-minus"><span class="glyphicon glyphicon-minus"><i
+											class="fas fa-minus"></i></span></div>
+								<input value="1" />
+								<div class="btn-plus"><span class="glyphicon glyphicon-plus"><i
+											class="fas fa-plus"></i></span></div>
+							</div>
+						</div>
+
+						<div class="action">
+							<a href="/cart/add-to-cart/{{datas._id}}" class="btn" style="background-color: pink">add to
+								cart</a>
+
+							<button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main"
+								data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+									class="far fa-heart"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Classic tabs -->
+		<div class="classic-tabs mt-4">
+
+			<ul class="nav tabs-primary nav-justified" id="advancedTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active show" id="description-tab" data-toggle="tab" href="#description"
+						role="tab" aria-controls="description" aria-selected="true">Mô tả</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info"
+						aria-selected="false">Thông tin</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
+						aria-controls="reviews" aria-selected="false">Reviews</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="advancedTabContent">
+				<div class="tab-pane fade show active" id="description" role="tabpanel"
+					aria-labelledby="description-tab">
+					<h5>Mô tả sản phẩm</h5>
+
+					<ul class="rating">
+						<div class="stars">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+						</div>
+					</ul>
+					<h6>Giá : {{datas.cost}}M</h6>
+					<p class="pt-1">{{datas.desc}}</p>
+				</div>
+				<div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+					<h5>Thông tin sản phẩm</h5>
+					<table class="table table-striped table-bordered mt-3">
+						<thead>
+							<tr>
+								<th scope="row" class="w-150 dark-grey-text h6">Cân nặng</th>
+								<td><em>0.3 kg</em></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="w-150 dark-grey-text h6">Tuổi</th>
+								<td><em>1</em></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+					<h5> Review về <span>{{datas.name}}</span></h5>
+
+
+					<h5 class="mt-4">thêm review</h5>
+					<p>Địa chỉ email sẽ không bị công khai.</p>
+					<div class="my-3">
+						<ul class="rating mb-0">
+							<li>
+								<a href="#!">
+									<i class="fas fa-star fa-sm text-primary"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<i class="fas fa-star fa-sm text-primary"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<i class="fas fa-star fa-sm text-primary"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<i class="fas fa-star fa-sm text-primary"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<i class="far fa-star fa-sm text-primary"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<!-- Your review -->
+						<div class="md-form md-outline">
+							<textarea id="form76" class="md-textarea form-control pr-6" rows="4"></textarea>
+							<label for="form76"> Review của bạn</label>
+						</div>
+						<!-- Name -->
+						<div class="md-form md-outline">
+							<input type="text" id="form75" class="form-control pr-6">
+							<label for="form75">Name</label>
+						</div>
+						<!-- Email -->
+						<div class="md-form md-outline">
+							<input type="email" id="form77" class="form-control pr-6">
+							<label for="form77">Email</label>
+						</div>
+						<div class="text-right pb-2">
+							<button type="button" class="btn btn-primary">Thêm review</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- Classic tabs -->
+
+		<div class="label mt-4" id="pet" style="font-size: 40px;text-align: center">Sản phẩm liên quan</div>
+
+
+
+		<section>
+
+			<div id="carousel-example-multi" class="carousel slide carousel-multi-item v-2 product-carousel"
+				data-ride="carousel">
+
+				<!--Controls-->
+				<div class="controls-top my-3">
+					<a class="btn-floating btn-sm" href="#carousel-example-multi" data-slide="prev"><i
+							class="fas fa-chevron-left"></i></a>
+					<a class="btn-floating btn-sm" href="#carousel-example-multi" data-slide="next"><i
+							class="fas fa-chevron-right"></i></a>
+				</div>
+				<!--/.Controls-->
+
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-multi" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-multi" data-slide-to="1"></li>
+					<li data-target="#carousel-example-multi" data-slide-to="2"></li>
+					<li data-target="#carousel-example-multi" data-slide-to="3"></li>
+					<li data-target="#carousel-example-multi" data-slide-to="4"></li>
+					<li data-target="#carousel-example-multi" data-slide-to="5"></li>
+					<li data-target="#carousel-example-multi" data-slide-to="6"></li>
+
+
+
+				</ol>
+				<!--/.Indicators-->
+
+				<div class="carousel-inner" role="listbox">
+
+					<div class="carousel-item active mx-auto">
+
+					</div>
+
+					{{#each relatedpet}}
+
+					<div class="carousel-item">
+						<div class="col-12 col-md-4 col-lg-2 mx-auto">
+							<div class="card mb-2 ">
+								<div class="view overlay">
+									<img class="card-img-top" style="height: 100px;" src="{{this.img}}"
+										alt="Card image cap">
+									<a href="/items/{{this.slug}}">
+										<div class="mask rgba-white-slight"></div>
+									</a>
+								</div>
+								<div class="card-body p-0">
+									<h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{this.name}}</h5>
+									<p class="aqua-sky-text mb-0">{{this.desc}}</p>
+									<ul class="list-unstyled list-inline my-2">
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+									</ul>
+									<p class="chili-pepper-text mb-0">{{this.cost}}M</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{{/each}}
+
+					{{#each relateditem}}
+
+					<div class="carousel-item">
+						<div class="col-12 col-md-4 col-lg-2 mx-auto">
+							<div class="card mb-2 ">
+								<div class="view overlay">
+									<img class="card-img-top" style="height: 100px;" src="{{this.img}}"
+										alt="Card image cap">
+									<a href="/items/{{this.slug}}">
+										<div class="mask rgba-white-slight"></div>
+									</a>
+								</div>
+								<div class="card-body p-0">
+									<h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{this.name}}</h5>
+									<p class="aqua-sky-text mb-0">{{this.desc}}</p>
+									<ul class="list-unstyled list-inline my-2">
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+									</ul>
+									<p class="chili-pepper-text mb-0">{{this.cost}}M</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{{/each}}
+
+					{{#each relatedfood}}
+
+					<div class="carousel-item">
+						<div class="col-12 col-md-4 col-lg-2 mx-auto">
+							<div class="card mb-2 ">
+								<div class="view overlay">
+									<img class="card-img-top" style="height: 100px;" src="{{this.img}}"
+										alt="Card image cap">
+									<a href="/items/{{this.slug}}">
+										<div class="mask rgba-white-slight"></div>
+									</a>
+								</div>
+								<div class="card-body p-0">
+									<h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{this.name}}</h5>
+									<p class="aqua-sky-text mb-0">{{this.desc}}</p>
+									<ul class="list-unstyled list-inline my-2">
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+									</ul>
+									<p class="chili-pepper-text mb-0">{{this.cost}}M</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{{/each}}
+
+					{{#each relatedclothes}}
+
+					<div class="carousel-item">
+						<div class="col-12 col-md-4 col-lg-2 mx-auto">
+							<div class="card mb-2 ">
+								<div class="view overlay">
+									<img class="card-img-top" style="height: 100px;" src="{{this.img}}"
+										alt="Card image cap">
+									<a href="/items/{{this.slug}}">
+										<div class="mask rgba-white-slight"></div>
+									</a>
+								</div>
+								<div class="card-body p-0">
+									<h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{this.name}}</h5>
+									<p class="aqua-sky-text mb-0">{{this.desc}}</p>
+									<ul class="list-unstyled list-inline my-2">
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+										<li class="list-inline-item mx-0"><span class="fa fa-star checked"></span></li>
+									</ul>
+									<p class="chili-pepper-text mb-0">{{this.cost}}M</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{{/each}}
+
+
+
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+
+
+	</div>
+</main>
+<script>
+	$(document).ready(function () {
+
+
+		//-- Click on QUANTITY
+		$(".btn-minus").on("click", function () {
+			var now = $(".section > div > input").val();
+			if ($.isNumeric(now)) {
+				if (parseInt(now) - 1 > 0) { now--; }
+				$(".section > div > input").val(now);
+			} else {
+				$(".section > div > input").val("1");
+			}
+		})
+		$(".btn-plus").on("click", function () {
+			var now = $(".section > div > input").val();
+			if ($.isNumeric(now)) {
+				$(".section > div > input").val(parseInt(now) + 1);
+			} else {
+				$(".section > div > input").val("1");
+			}
+		})
+	})
+
+	$('.carousel.carousel-multi-item.v-2 .carousel-item ').each(function () {
+		var next = $(this).next();
+		if (!next.length) {
+			next = $(this).siblings(':first');
+		}
+		next.children(':first-child').clone().appendTo($(this));
+
+		for (var i = 0; i < 3; i++) {
+			next = next.next();
+			if (!next.length) {
+				next = $(this).siblings(':first');
+			}
+			next.children(':first-child').clone().appendTo($(this));
+		}
+	});
+
+
+</script>

@@ -1,0 +1,148 @@
+<main>
+
+    <div class="container mt-4">
+
+      <div class="row">
+        <div class="col-lg-4 mt-3 mb-4">
+
+          <h4 class="mb-4">Bộ lọc</h4>
+
+            
+          <section>
+              <a style="font-size: large;"  href="/product/all">Tất cả sản phẩm</a>
+            <h5 class="mb-3 mt-4">Thú cưng</h5>
+
+            <div class="text-muted small text-uppercase mb-5">
+
+              <p class="mb-3"><a href="/product/dog" class="card-link-secondary">Chó</a></p>
+              <p class="mb-3"><a href="/product/cat" class="card-link-secondary">Mèo</a></p>
+            
+              
+            </div>
+
+          </section>
+          <!-- Section: Categories -->
+
+          <!-- Section: Categories -->
+          <section>
+
+            <h5 class="mb-3">Đồ dùng cho thú cưng</h5>
+
+            <div class="text-muted small text-uppercase mb-5">
+
+              <p class="mb-3"><a href="/product/need" class="card-link-secondary">Đồ dùng cần thiết</a></p>
+              <p class="mb-3"><a href="/product/food" class="card-link-secondary">Thức ăn</a></p>
+              <p class="mb-3"><a href="/product/clothes" class="card-link-secondary">Quần áo</a></p>
+              <p class="mb-3"><a href="/product/else" class="card-link-secondary">Khác</a></p>
+             
+            </div>
+
+          </section>
+          <!-- Section: Categories -->
+
+          <!-- Section: Categories -->
+          <section>
+
+            
+
+         
+            
+            <!-- Section: Price version 2 -->
+
+          </section>
+          <!-- Section: Filters -->
+
+        </div>
+        <div class="col-lg-8">
+
+          <!-- Section: Block Content -->
+          <section>
+
+            <div class="row d-flex justify-content-around align-items-center mb-4">
+              <div class="col-12 col-md-3 text-center text-md-left">
+                
+              </div>
+              <div class="col-12 col-md-5">
+                <div class="d-flex flex-wrap">
+                  <div class="select-outline position-relative w-100">
+                    <select class="mdb-select md-outline md-form">
+                      <option value="" disabled selected>Sort by</option>
+                      <option value="1">Popularity</option>
+                      <option value="2">Price: lowest to highest</option>
+                      <option value="3">Price: highest to lowest</option>
+                      <option value="4">Newest</option>
+                      <option value="5">Most rated</option>
+                    </select>
+                    <label>Sorting</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 text-center">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center float-md-right mb-0">
+                    <li class="page-item"><a class="page-link"><i class="fas fa-chevron-left"></i></a></li>
+                    <li class="page-item active"><a class="page-link">1</a></li>
+                    <li class="page-item"><a class="page-link">2</a></li>
+                    <li class="page-item"><a class="page-link">3</a></li>
+                    <li class="page-item"><a class="page-link"><i class="fas fa-chevron-right"></i></a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+          </section>
+          <!-- Section: Block Content -->
+
+          <!--Section: Block Content-->
+          <section>
+
+            <!-- Grid row -->
+            <div class="row mb-4"> 
+
+                {{!-- phân loại category --}}
+                {{#each data}}
+              <div class="col-md-6 col-lg-4 mb-4">
+              
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                      <a href="/items/{{this.slug}}"> <img class="img-fluid w-100" style="height: 220px;" src="{{this.img}}" alt="Sample"></a>
+                   
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <a href="/items/{{this.slug}}"><h5>{{this.name}}</h5></a>
+                    <h6 class="mb-3">{{this.cost}}</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
+                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
+
+                  </div>
+
+                </div>
+           
+              </div>
+               {{else}}
+                   <center>Không tìm thấy sản phẩm</center> 
+              {{/each}}
+
+
+    
+
+
+           
+            </div>
+          
+          </section>
+        
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
