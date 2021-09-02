@@ -16,7 +16,7 @@ class CartController {
             }
             cart.add(product, product.id);
             req.session.cart = cart;
-            console.log(cart)
+
             res.redirect('/');
         });
 

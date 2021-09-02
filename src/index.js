@@ -18,10 +18,13 @@ const MongoStore = require('connect-mongodb-session')(session);
 const mongoose = require('mongoose');
 const paginateHelper = require('express-handlebars-paginate');
 Handlebars.registerHelper('paginateHelper', paginateHelper);
+require('./middleware/auth')
 
-app.use(expressValidator()); //this line to be addded
+route(app);
 
+require('./middleware/auth')(passport);
 
+db.connect();
 
 
 
@@ -40,9 +43,9 @@ app.engine('hbs', exphbs({
 
 
 
+app.use(expressValidator()); //this line to be addded
 
 
-require('./middleware/auth')(passport);
 
 
 app.use(cookieParser());
@@ -67,7 +70,7 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash());
 app.use(methodOverride('_method'));
 
-require('./middleware/auth')
+
 app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -75,9 +78,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.urlencoded());
-db.connect();
 
-route(app);
+
+
 
 app.use(express.static(__dirname + '/public'));
 app.set('view options', { layout: 'other' });
