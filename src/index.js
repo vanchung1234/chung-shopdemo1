@@ -4,7 +4,7 @@ const app = express()
 const path = require('path');
 const exphbs = require('express-handlebars');
 const route = require('./router');
-const db = require('./config/db/index');
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
@@ -18,13 +18,10 @@ const MongoStore = require('connect-mongodb-session')(session);
 const mongoose = require('mongoose');
 const paginateHelper = require('express-handlebars-paginate');
 Handlebars.registerHelper('paginateHelper', paginateHelper);
-require('./middleware/auth')
 
-route(app);
+app.use(expressValidator()); //this line to be addded
 
-require('./middleware/auth')(passport);
 
-db.connect();
 
 
 
@@ -43,9 +40,9 @@ app.engine('hbs', exphbs({
 
 
 
-app.use(expressValidator()); //this line to be addded
 
 
+require('./middleware/auth')(passport);
 
 
 app.use(cookieParser());
@@ -70,7 +67,7 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash());
 app.use(methodOverride('_method'));
 
-
+require('./middleware/auth')
 app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -80,7 +77,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded());
 
 
-
+route(app);
 
 app.use(express.static(__dirname + '/public'));
 app.set('view options', { layout: 'other' });

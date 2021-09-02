@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../../config/db/index');
 const mongoose_delete = require('mongoose-delete');
 
 const Schema = mongoose.Schema;

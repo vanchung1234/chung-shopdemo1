@@ -1,6 +1,5 @@
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');
-var salt = bcrypt.genSaltSync(8);
+const mongoose = require('../../config/db/index');
+
 
 // định nghĩ cấu trúc user model
 var userSchema = mongoose.Schema({
@@ -12,6 +11,4 @@ var userSchema = mongoose.Schema({
 
 // kiểm tra password có hợp lệ không
 
- module.exports = mongoose.model('account', userSchema)
-
- 
+module.exports = mongoose.model('account', userSchema)

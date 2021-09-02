@@ -1,15 +1,9 @@
 const mongoose = require('mongoose');
 
-async function connect() {
-    try {
-        await mongoose.connect(process.env.MONGODB_URL || 'mongodb+srv://admin:admin@cluster0.3aozg.mongodb.net/demo1?retryWrites=true&w=majority', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-        console.log('ket noi thanh cong')
-    } catch (error) {
-        console.log('ket noi that bai')
-    }
-}
+mongoose.connect('mongodb+srv://admin:admin@cluster0.3aozg.mongodb.net/demo1?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
-module.exports = { connect };
+
+module.exports = mongoose;
