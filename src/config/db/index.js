@@ -4,9 +4,7 @@ async function connect() {
     try {
         await mongoose.connect(process.env.MONGODB_URL || 'mongodb+srv://admin:admin@cluster0.3aozg.mongodb.net/demo1?retryWrites=true&w=majority', {
             useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false,
-            useCreateIndex: true
+            useUnifiedTopology: true
         });
         console.log('ket noi thanh cong')
     } catch (error) {
