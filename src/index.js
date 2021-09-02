@@ -13,7 +13,7 @@ var passport = require('passport')
 var flash = require('connect-flash');
 const Handlebars = require('handlebars')
 var expressValidator = require('express-validator');
-
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const MongoStore = require('connect-mongodb-session')(session);
 const mongoose = require('mongoose');
 const paginateHelper = require('express-handlebars-paginate');
@@ -33,7 +33,7 @@ app.engine('hbs', exphbs({
     },
 
 
-
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
 
 
 }));
