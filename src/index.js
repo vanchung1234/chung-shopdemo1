@@ -52,7 +52,9 @@ app.use(session({
     name: 'session cookie user',
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: new MongoStore({
+        url: process.env.MONGOLAB_URL
+    }),
 
 })); // chuối bí mật đã mã hóa coookie
 
