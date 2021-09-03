@@ -56,11 +56,10 @@ app.use(session({
 
 })); // chuối bí mật đã mã hóa coookie
 
-app.use(function(req, res, next) {
-
-    res.locals.session = req.session;
-    next();
-});
+// app.use(function(req, res, next) {
+//     res.locals.session = req.session;
+//     next();
+// });
 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
