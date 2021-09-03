@@ -52,7 +52,8 @@ app.use(session({
     name: 'session cookie user',
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie: { maxAge: 24 * 60 * 60 * 1000 },
+    store: new MongoStore({ mongooseConnection: mongoose.connection, clear_interval: 3600 }),
 
 })); // chuối bí mật đã mã hóa coookie
 
