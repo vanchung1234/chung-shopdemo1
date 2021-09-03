@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://chungdev:vanchung123@cluster0.pkavz.mongodb.net/demo1?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/demo1', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
 });
 
 
