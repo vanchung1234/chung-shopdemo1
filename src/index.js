@@ -14,7 +14,7 @@ var flash = require('connect-flash');
 const Handlebars = require('handlebars')
 var expressValidator = require('express-validator');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
-const MongoStore = require('connect-mongodb-session')(session);
+
 const mongoose = require('mongoose');
 const paginateHelper = require('express-handlebars-paginate');
 Handlebars.registerHelper('paginateHelper', paginateHelper);
@@ -52,8 +52,7 @@ app.use(session({
     name: 'session cookie user',
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 24 * 60 * 60 * 1000 },
-    store: new MongoStore({ mongooseConnection: mongoose.connection, clear_interval: 3600 }),
+
 
 })); // chuối bí mật đã mã hóa coookie
 
