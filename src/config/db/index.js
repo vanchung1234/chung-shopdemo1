@@ -7,4 +7,4 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb+srv://chungdev:vanchung123@
 });
 
 
-module.exports = mongoose
+module.exports = mongoose;
