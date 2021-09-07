@@ -1,0 +1,89 @@
+/* mobile: */
+
+@media only screen and (max-width:576px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: -webkit-box!important;
+        display: -ms-flexbox!important;
+        display: flex!important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        width: 100%;
+    }
+    .justify-content-center {
+        -webkit-box-pack: center!important;
+        -ms-flex-pack: center!important;
+        justify-content: center!important;
+    }
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 110px;
+    }
+    .collapse {
+        display: none;
+    }
+    .navbar-brand img {
+        width: 50px;
+    }
+    .navbar-brand {
+        margin-right: 0 !important;
+    }
+    .form-inline {
+        margin-left: 10px !important;
+        width: 150px !important;
+    }
+    .navbar-nav {
+        margin-left: 5px !important;
+        font-size: 12px !important;
+    }
+    .btn {
+        font-size: 10px !important;
+    }
+    .nav-link {
+        margin-left: 5px !important;
+        font-size: 12px !important;
+    }
+    .dropdown-menu {
+        font-size: 12px;
+        width: 150px !important;
+    }
+    .dropdown-menu {
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+    }
+    .navbar-nav .dropdown-menu {
+        float: none;
+        position: absolute !important;
+    }
+    .dropdown-item {
+        padding: 0 !important;
+    }
+    .nav-pills {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+    .nav-margin {
+        margin-left: 0px !important;
+    }
+    .w-100 {
+        height: 300px !important;
+    }
+    .label {
+        font-size: 26px!important;
+    }
+    .col-lg-4 {
+        padding-left: 44px !important;
+    }
+}
+
+
+/* tablet: */
+
+@media only screen and (max-width: 46.25em) and (max-width: 63.9375em) {}
