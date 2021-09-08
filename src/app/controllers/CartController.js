@@ -23,6 +23,8 @@ class CartController {
 
     }
 
+
+
     viewcart(req, res, next) {
 
         if (!req.session.cart) {
@@ -33,6 +35,41 @@ class CartController {
             res.render('shopping-cart', { products: cart.generateArr(), totalcost: cart.totalcost });
         }
 
+
+    }
+
+    add(req, res, next) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+        item.findById(productId.trim(), function(err, product) {
+            if (err) {
+                console.log(err);
+            }
+            cart.add(product, product.id);
+            req.session.cart = cart;
+
+            res.redirect('/cart/shopping-cart/');
+        });
+
+
+    }
+
+    reduce(req, res, next) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+        cart.reduce(productId);
+        req.session.cart = cart;
+
+        res.redirect('/cart/shopping-cart/')
+    }
+
+    remove(req, res, next) {
+        var productId = req.params.id;
+        var cart = new Cart(req.session.cart ? req.session.cart : {});
+        cart.remove(productId);
+        req.session.cart = cart;
+        res.redirect('/cart/shopping-cart/')
 
     }
 
