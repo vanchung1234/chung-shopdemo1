@@ -3,14 +3,16 @@ class SiteController {
 
     show(req, res) {
         res.render('intro', {
-            active: { intro: true }
+            active: { intro: true },
+            user: req.user
         })
     }
 
     contact(req, res) {
 
         res.render('contact', {
-            active: { contact: true }
+            active: { contact: true },
+            user: req.user
         })
     }
 }

@@ -28,11 +28,11 @@ class CartController {
     viewcart(req, res, next) {
 
         if (!req.session.cart) {
-            res.render('shopping-cart', { products: null });
+            res.render('shopping-cart', { products: null, user: req.user });
         } else {
             var cart = new Cart(req.session.cart);
 
-            res.render('shopping-cart', { products: cart.generateArr(), totalcost: cart.totalcost });
+            res.render('shopping-cart', { products: cart.generateArr(), totalcost: cart.totalcost, user: req.user });
         }
 
 
@@ -79,7 +79,7 @@ class CartController {
             res.redirect('/cart/shopping-cart/')
         } else {
             var cart = new Cart(req.session.cart);
-            res.render('checkout', { total: cart.totalcost });
+            res.render('checkout', { total: cart.totalcost, user: req.user });
         }
 
 

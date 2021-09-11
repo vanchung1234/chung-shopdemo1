@@ -15,6 +15,7 @@ const Handlebars = require('handlebars')
 var expressValidator = require('express-validator');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 
+
 const mongoose = require('mongoose');
 const paginateHelper = require('express-handlebars-paginate');
 Handlebars.registerHelper('paginateHelper', paginateHelper);

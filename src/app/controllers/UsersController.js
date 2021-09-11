@@ -1,4 +1,5 @@
 const Account = require('../models/Account');
+const { mongooseToObject } = require('../../util/mongoose')
 
 class UsersController {
 
@@ -20,6 +21,18 @@ class UsersController {
             layout: 'other',
 
         });
+    }
+
+    profile(req, res, next) {
+        res.render('profile', {
+            user: req.user
+        })
+    }
+
+    update(req, res, next) {
+        Account.updateOne({ _id: req.params.id }, req.body)
+            .then(() => res.redirect('/users/profile'))
+            .catch(next)
     }
 
 

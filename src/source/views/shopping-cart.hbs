@@ -94,8 +94,8 @@
                 <div class="pt-4">
 
                     <h5 class="mb-4">Dự kiến giao hàng</h5>
-
-                    <p class="mb-0"> ngày 29 tháng 2.</p>
+                    <p class="mb-0">Món hàng của bạn chúng tôi dự kiến giao trong ngày :</p>
+                    <p class="mb-0" id="time"></p>
                 </div>
             </div>
             <!-- Card -->
@@ -179,3 +179,12 @@
     </div>
 
 {{/if}}
+
+<script>
+   var today = new Date();
+   var date = "Ngày " + (today.getDate()+7)+' tháng '+(today.getMonth()+1)+' năm '+today.getFullYear();
+  
+   var dateTime = date;
+
+   document.getElementById("time").innerHTML = dateTime;
+</script>
