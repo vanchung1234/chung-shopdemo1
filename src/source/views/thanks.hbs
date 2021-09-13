@@ -1,0 +1,125 @@
+<style>
+    .qt-co {
+        position: absolute;
+        top: 7px;
+        margin-left: -10px;
+    }
+
+    .product-co {
+        position: relative;
+        height: 50px;
+        width: 50px;
+    }
+</style>
+<body class="bg-light">
+
+    <div class="container">
+        <div class="py-5 text-center">
+            <a href="/"><img class="d-block mx-auto mb-4" src="/img/logo.png" alt="" width="100" height="100"></a>
+            <h2>Chung Shop</h2>
+            <p class="lead">Chung Shop vô cùng cảm ơn quý khách đã tin tưởng và mua hàng tại Chung Shop.</p>
+        </div>
+
+        <div class="row">
+           <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted mt-4">Giỏ hàng của bạn</span>
+            <span class="badge badge-secondary badge-pill mt-4">{{session.cart.totalQty}}</span>
+          </h4>
+          
+          <ul class="list-group mb-3">
+            {{#each products }}
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                
+               <img  class="product-co" src="{{ this.item.img }}" alt="">
+               <span class="badge badge-secondary badge-pill qt-co" >{{ this.qty }}</span>
+              </div>
+              <span class="text-muted">{{ this.item.name }}</span>
+              <span class="text-muted">{{ this.cost }}M</span>
+            </li>
+          
+            {{/each}}
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Tiền SHIP</span>
+              <span class="text-muted">1M</span>
+            </li>
+            
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Tổng số tiền cần thanh toán</span>
+              <strong>{{sum total 1}}M</strong>
+            </li>
+          </ul>
+
+         
+        </div>
+            <div class="col-md-6 order-md-1">
+                <h4 class="mb-3" style="text-align: center;">Thông tin nhận hàng</h4>
+                <form class="needs-validation">
+                    <div class="mb-3">
+                        <label class="label-input" for="name">Họ và tên <span class="text-muted"></span></label>
+                        <input type="name" class="form-control input-thank" value="{{data.name}}" disabled>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="label-input" for="email">Email <span class="text-muted"></span></label>
+                        <input type="email" class="form-control input-thank" value="{{data.email}}" disabled>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="label-input" for="address">Địa chỉ</label>
+                        <input type="text" class="form-control input-thank" name="address" value="{{data.address}}" disabled>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="label-input" for="phone">Số điện thoại</label>
+                        <input type="text" class="form-control input-thank" name="phone" value="{{data.phone}}" disabled>
+
+                    </div>
+
+
+
+                    <div class=" mb-3">
+                        <label class="label-input" for="city">Tỉnh thành</label>
+                        <input type="text" class="form-control input-thank" value="{{data.city}}" disabled>
+                    </div>
+
+                    <div class=" mb-3">
+                        <label class="label-input" for="city">Phương thức thanh toán</label>
+                        <input type="text" class="form-control input-thank" value="{{data.paymentMethod}}" disabled>
+                    </div>
+
+                     <div class=" mb-3">
+                        <label class="label-input" for="city">Thời gian đặt hàng</label>
+                        <input type="text" class="form-control input-thank" value="{{data.time}}" disabled>
+                    </div>
+
+                    <div class=" mb-3">
+                        <label class="label-input" for="city">Phương thức giao hàng</label>
+                        <input type="text" class="form-control input-thank" value="Giao hàng tận nơi" disabled>
+                    </div>
+
+                    <div class=" mb-3">
+                        <label class="label-input" for="city">Thời gian giao hàng dự kiến: </label>
+                        <input type="text" class="form-control input-thank" value="" id="time" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <center class="mt-4 mb-4"> <a href="/"><button type="button" class="btn btn-lg btn-primary">Tiếp tục mua sắm</button></a></center>
+
+    </div>
+
+</body>
+<script>
+   var today = new Date();
+   var date = "Ngày " + (today.getDate()+7)+' tháng '+(today.getMonth()+1)+' năm '+today.getFullYear();
+  
+   var dateTime = date;
+
+   document.getElementById("time").value = dateTime;
+</script>

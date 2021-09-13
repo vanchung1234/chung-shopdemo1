@@ -1,36 +1,32 @@
-
 <style>
-    .header-link {
-      font-size: large;
-      color: white;
-      font-weight: 500;
-    }
+  .header-link {
+    font-size: large;
+    color: white;
+    font-weight: 500;
+  }
 
-    .nav-margin  {
-      margin-left: 3rem;
-    }
+  .nav-margin {
+    margin-left: 3rem;
+  }
 
   .avatar {
-  vertical-align: middle;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
 
-.dropdown-toggle::after {
+  .dropdown-toggle::after {
     display: none !important;
-   
-}
 
-.user {
-  margin-left: 6px;
-  font-size: 16px;
-  font-weight: 500;
-  color: black;
-}
+  }
 
-  
-
+  .user {
+    margin-left: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+  }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-expand-sm|xs navbar-light bg-light  ">
@@ -40,29 +36,29 @@
     <a class="navbar-brand" href="/"><img src="/img/logo.png" style="height: 80px;" alt=""></a>
 
 
-     
+
     <form method="GET" action="/product/search" class="form-inline my-5  my-lg-0 " style="margin-left: 40px;">
       <input class="form-control mr-sm-2" name="name" type="search" placeholder="Tìm kiếm tên sản phẩm">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">search</button>
 
-      
+
     </form>
-  
-      <ul class="nav navbar-nav ml-4">
-                <li>
-                    <a href="/cart/shopping-cart/" style="color: black;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        Shopping cart <span class="badge badge-pill badge-dark">{{session.cart.totalQty}}</span></a>
-                </li>
+
+    <ul class="nav navbar-nav ml-4">
+      <li>
+        <a href="/cart/shopping-cart/" style="color: black;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          Shopping cart <span class="badge badge-pill badge-dark">{{session.cart.totalQty}}</span></a>
+      </li>
     </ul>
-   
+
     <ul class="navbar-nav">
-      
+
       <li class="nav-item dropdown" style="list-style: none;">
         <a class="nav-link dropdown-toggle ml-4 " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <img src="{{user.avatar}}" alt="Avatar" class="avatar"><span class="user">{{user.local.username}}</span> 
+          <img src="{{user.avatar}}" alt="Avatar" class="avatar"><span class="user">{{user.local.username}}</span>
         </a>
-    
+        {{#if user.admin}}
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/users/profile">Chỉnh sửa hồ sơ</a>
           <a class="dropdown-item" href="/admin/storeditems">Quản lý sản phẩm</a>
@@ -70,33 +66,46 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/users/logout">Đăng xuất</a>
         </div>
+        {{else}}
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/users/profile">Chỉnh sửa hồ sơ</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/users/logout">Đăng xuất</a>
+        </div>
+        {{/if}}
       </li>
     </ul>
-     
+
   </div>
 
 
-</nav>
 
-<header class="bg-dark py-2 "  >
+</nav>
+<center class="" >
+ 
+      <audio class="mb-2 mt-1" autoplay>
+        <source src="/audio/nhachay.mp3" type="audio/mpeg">
+      </audio>
+
+</center>
+
+<header class="bg-dark py-2 ">
   <ul class="nav justify-content-center nav-pills ">
     <li class="nav-item nav-margin  ">
       <a class="nav-link header-link {{#if active.Home}}active{{/if}} " href="/">Trang chủ</a>
     </li>
 
-     <li class="nav-item nav-margin">
-      <a  class="nav-link header-link {{#if active.intro}}active{{/if}} " href="/news/intro">Giới thiệu</a>
+    <li class="nav-item nav-margin">
+      <a class="nav-link header-link {{#if active.intro}}active{{/if}} " href="/news/intro">Giới thiệu</a>
     </li>
 
-     <li class="nav-item nav-margin">
-      <a  class="nav-link header-link  {{#if active.allproduct}}active{{/if}}" href="/product/all">Sản phẩm</a>
+    <li class="nav-item nav-margin">
+      <a class="nav-link header-link  {{#if active.allproduct}}active{{/if}}" href="/product/all">Sản phẩm</a>
     </li>
-    
+
     </li>
     <li class="nav-item nav-margin">
-      <a  class="nav-link header-link {{#if active.contact}}active{{/if}} " href="/news/contact">liên hệ</a>
+      <a class="nav-link header-link {{#if active.contact}}active{{/if}} " href="/news/contact">liên hệ</a>
     </li>
   </ul>
 </header>
-
-

@@ -8,6 +8,7 @@ router.get('/shopping-cart', cartController.viewcart);
 router.get('/reduce/:id', cartController.reduce);
 router.get('/remove/:id', cartController.remove);
 router.get('/checkout', cartController.checkout);
+router.post('/thanks', cartController.thanks);
 
 
 module.exports = router;

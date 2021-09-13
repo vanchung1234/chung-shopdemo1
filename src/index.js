@@ -19,7 +19,7 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 const mongoose = require('mongoose');
 const paginateHelper = require('express-handlebars-paginate');
 Handlebars.registerHelper('paginateHelper', paginateHelper);
-
+const { authRole } = require('../src/middleware/Userpremissions');
 app.use(expressValidator()); //this line to be addded
 
 
@@ -59,6 +59,7 @@ app.use(session({
 
 app.use(function(req, res, next) {
     res.locals.session = req.session;
+
     next();
 });
 

@@ -1,7 +1,9 @@
 const Account = require('../models/Account');
 const Cart = require('../models/cart')
 const item = require('../models/Items');
-
+const Order = require('../models/Order')
+const { mongooseToObject } = require('../../util/mongoose')
+const { mutipleMongooseToObject } = require('../../util/mongoose')
 
 class CartController {
 
@@ -79,10 +81,37 @@ class CartController {
             res.redirect('/cart/shopping-cart/')
         } else {
             var cart = new Cart(req.session.cart);
-            res.render('checkout', { total: cart.totalcost, user: req.user });
+            res.render('checkout', { products: cart.generateArr(), total: cart.totalcost, user: req.user });
         }
 
 
+    }
+
+    thanks(req, res, next) {
+        var cart = new Cart(req.session.cart);
+        var dateFormat = require('dateformat');
+        var date = new Date();
+        var desc = dateFormat(date, ' HH:mm dd-mm-yyyy');
+        var order = new Order({
+            user: req.user,
+            cart: cart,
+            email: req.body.email,
+            address: req.body.address,
+            name: req.body.name,
+            phone: req.body.phone,
+            city: req.body.city,
+            paymentMethod: req.body.paymentMethod,
+            time: desc
+        });
+        order.save()
+            .then((data) => res.render('thanks', {
+                layout: 'other',
+                data: mongooseToObject(data),
+                products: cart.generateArr(),
+                user: req.user,
+                total: cart.totalcost
+            }), req.session.cart = null)
+            .catch((error) => {});
     }
 
 

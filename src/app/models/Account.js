@@ -18,6 +18,7 @@ var userSchema = mongoose.Schema({
         type: String,
         default: 'user'
     },
+    admin: { type: Boolean, default: false }
 
 
 });
@@ -26,7 +27,6 @@ var userSchema = mongoose.Schema({
 
 
 
-// kiểm tra password có hợp lệ không
 
 
 module.exports = mongoose.model('account', userSchema)
