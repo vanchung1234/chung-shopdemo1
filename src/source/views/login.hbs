@@ -18,6 +18,9 @@
                 {{#if message }}
                 <div class=" alert-danger">{{message}}</div>
                 {{/if}}
+                 {{#if success }}
+                <div class=" alert-danger">{{success}}</div>
+                {{/if}}
             </div>
             <div class="card-body">
                 <form method="POST" action="/users/login">

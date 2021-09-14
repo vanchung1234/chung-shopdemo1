@@ -9,7 +9,7 @@ class UsersController {
     login(req, res, next) {
         res.render('login', {
             message: req.flash('loginMessage'),
-            message: req.flash('signupMessage'),
+            success: req.flash('success'),
             layout: 'other'
 
         });

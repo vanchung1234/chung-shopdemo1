@@ -38,7 +38,7 @@ module.exports = function(passport) {
                     newUser.save(function(err) {
                         if (err)
                             throw err;
-                        return done(null, newUser, req.flash('signupMessage', 'Đăng ký thành công.'));
+                        return done(null, newUser, req.flash('success', 'Đăng ký thành công.'));
                     })
                 }
 
