@@ -1,5 +1,5 @@
 const Account = require('../models/Account');
-const Cart = require('../models/cart')
+const Cart = require('../models/cart');
 const item = require('../models/Items');
 const Order = require('../models/Order')
 const { mongooseToObject } = require('../../util/mongoose')
@@ -12,7 +12,7 @@ class CartController {
         var productId = req.params.id;
         var cart = new Cart(req.session.cart ? req.session.cart : {});
 
-        item.findById(productId.trim(), function(err, product) {
+        item.findById(productId, function(err, product) {
             if (err) {
                 console.log(err);
             }

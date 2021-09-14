@@ -1,4 +1,7 @@
 const Account = require('../models/Account');
+const Order = require('../models/Order');
+const Cart = require('../models/cart');
+
 const { mongooseToObject } = require('../../util/mongoose')
 
 class UsersController {
@@ -6,6 +9,7 @@ class UsersController {
     login(req, res, next) {
         res.render('login', {
             message: req.flash('loginMessage'),
+            message: req.flash('signupMessage'),
             layout: 'other'
 
         });
@@ -24,9 +28,20 @@ class UsersController {
     }
 
     profile(req, res, next) {
-        res.render('profile', {
-            user: req.user
-        })
+        Order.find({ user: req.user }, function(err, orders) {
+            if (err) {
+                return res.write('Error!');
+            }
+            let cart;
+
+            orders.forEach(function(order) {
+                cart = new Cart(order.cart);
+                order.items = cart.generateArr();
+                order.totalcost = order.cart.totalcost;
+            });
+
+            res.render('profile', { orders: orders, user: req.user });
+        });
     }
 
     update(req, res, next) {

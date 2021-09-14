@@ -149,6 +149,15 @@
   </div>
 
 </main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
+<script>
+$.ajax({
+  url:'/product/all',
+  type: 'GET'
+})
+.then(datas => {
+  console.log(datas)
+})
+.catch(err => {
+  console.log(err)
+})  
+</script>

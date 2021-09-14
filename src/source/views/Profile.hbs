@@ -21,7 +21,21 @@
     .labels {
         font-size: 11px
     }
+
+  
+  .qt-co {
+    position: absolute;
+    top: 7px;
+    margin-left: -10px;
+  }
+
+  .product-co {
+    position: relative;
+    height: 50px;
+    width: 50px;
+  }
 </style>
+<script src="/js/login.js"></script>
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-5 border-right">
@@ -49,8 +63,7 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><label class="labels">Thành phố</label>
-                    <select class="form-control" id="city"
-                            name="city">
+                        <select class="form-control" id="city" name="city">
                             <option>{{user.city}}</option>
                             <option>Hà Nội</option>
                             <option>Hải Phòng</option>
@@ -70,6 +83,44 @@
 
 
     </div>
-</div>
-</div>
+    <hr class="mb-4">
+    {{# if orders}}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 main mb-4">
+            <span>Sản Phẩm đã mua</span>
+            {{#each orders}}
+            <ul class="list-group">
+                {{#each this.items}}
+                <li class="list-group-item d-flex justify-content-between lh-condensed mt-4">
+                    <div>
+
+                        <img class="product-co" src="{{ this.item.img }}" alt="">
+                        <span class="badge badge-secondary badge-pill qt-co">{{ this.qty }}</span>
+                    </div>
+                    <span class="text-muted">Tên mặt hàng: {{ this.item.name }}</span>
+                    <span class="text-muted">Giá tiền: {{ this.cost }}M</span>
+                </li>
+                {{/each}}
+                <li class="list-group-item list-group-item-success">Tổng số tiền đã chi: {{ this.totalcost }}M</li>
+            </ul>
+            {{/each}}
+            {{ this.totalcost }}
+        </div>
+    </div>
+    {{else}}
+    <center >Giỏ hàng của bạn hiện đang trống</center> 
+    <div class="empty mb-4 d-flex justify-content-center " >
+        
+        <img class="mb-4 mt-4" src="https://bizweb.dktcdn.net/100/199/161/themes/523118/assets/empty_cart.png" alt="Empty orders">
+
+    </div>  
+  
+         <center > <a href="/"><button type="button" class="btn btn-lg btn-primary mb-4">Mua sắm nào</button></a></center>
+ 
+           
+
+    {{/if}}
+
+
 </div>

@@ -29,7 +29,7 @@ module.exports = function(passport) {
                 // if no user is found, return the message
                 if (user)
 
-                    return done(null, false, req.flash('signupMessage', 'User existed.'));
+                    return done(null, false, req.flash('signupMessage', 'Người dùng đã tồn tại.'));
                 else {
                     var newUser = new User();
                     newUser.local.username = username;
@@ -38,7 +38,7 @@ module.exports = function(passport) {
                     newUser.save(function(err) {
                         if (err)
                             throw err;
-                        return done(null, newUser);
+                        return done(null, newUser, req.flash('signupMessage', 'Đăng ký thành công.'));
                     })
                 }
 
@@ -65,7 +65,7 @@ module.exports = function(passport) {
                     return done(err);
                 // if no user is found, return the message
                 if (!user)
-                    return done(null, false, req.flash('loginMessage', 'No user found or password is wrong.'));
+                    return done(null, false, req.flash('loginMessage', 'Sai tên đăng nhập hoặc mật khẩu.'));
 
 
 

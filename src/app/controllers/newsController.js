@@ -12,7 +12,8 @@ class SiteController {
 
         res.render('contact', {
             active: { contact: true },
-            user: req.user
+            user: req.user,
+
         })
     }
 }

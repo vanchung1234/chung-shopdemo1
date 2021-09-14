@@ -65,7 +65,8 @@
             <div class="card-body">
                 <h5 class="card-title">{{this.name}}</h5>
                 <p class="card-text">{{this.cost}}M</p>
-                <a href="/cart/add-to-cart/{{this._id}}" class="btn " id="cart_id" style="background-color: pink;">Buy</a>
+                <a href="/cart/add-to-cart/{{this._id}}" class="btn " id="cart_id"
+                    style="background-color: pink;">Buy</a>
             </div>
         </div>
     </div>
@@ -87,8 +88,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{this.name}}</h5>
                 <p class="card-text">{{this.cost}}M</p>
-                <a href="/cart/add-to-cart/{{this._id}}" class="btn " id="cart_id" style="background-color: pink;">Buy</a>
-                
+                <a href="/cart/add-to-cart/{{this._id}}" class="btn " id="cart_id"
+                    style="background-color: pink;">Buy</a>
+
             </div>
         </div>
 
@@ -98,7 +100,7 @@
 
 </div>
 <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-dark "><a class="btn-link" href="/product/need">Xem thêm</a></button>
+    <button type="button" class="btn btn-dark "><a class="btn-link" href="/product/need">Xem thêm</a></button>
 
 </div>
 
@@ -113,7 +115,8 @@
             <div class="card-body">
                 <h5 class="card-title">{{this.name}}</h5>
                 <p class="card-text">{{this.cost}}M</p>
-                <a href="/cart/add-to-cart/{{this._id}}" class="btn " id="cart_id" style="background-color: pink;">Buy</a>
+                <a href="/cart/add-to-cart/{{this._id}}" class="btn " id="cart_id"
+                    style="background-color: pink;">Buy</a>
             </div>
         </div>
 
@@ -138,7 +141,8 @@
             <div class="card-body">
                 <h5 class="card-title">{{this.name}}</h5>
                 <p class="card-text">{{this.cost}}M</p>
-                <a href="/cart/add-to-cart/{{this._id}}" class="btn " id="cart_id" style="background-color: pink;">Buy</a>
+                <a href="/cart/add-to-cart/{{this._id}}" class="btn " id="cart_id"
+                    style="background-color: pink;">Buy</a>
             </div>
         </div>
 
@@ -148,6 +152,15 @@
 
 </div>
 <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-dark "><a class="btn-link" href="/product/food">Xem thêm</a></button>
+    <button type="button" class="btn btn-dark "><a class="btn-link" href="/product/food">Xem thêm</a></button>
 
 </div>
+<script>
+   $(document).on('click','#cart_id',function(e){
+
+  e.preventDefault();
+  var id = $(this).attr('href');
+  console.log(id)
+
+});
+</script>
